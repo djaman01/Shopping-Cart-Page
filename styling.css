@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  border: 2px red dotted;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left img {
+  width: 100px;
+  margin-left: 50px;
+}
+
+.middle {
+padding-top: 20px;
+text-align: center;
+margin-left: 310px;
+}
+
+.right {
+  border: 2px blue dotted;
+  display:flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-around;
+  margin-left: 200px;
+}
