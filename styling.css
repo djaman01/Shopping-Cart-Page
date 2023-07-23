@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/* styling header */
+
 .heading {
   border: 2px red dotted;
   display: flex;
@@ -29,3 +31,45 @@ margin-left: 310px;
   justify-content: space-around;
   margin-left: 200px;
 }
+
+/* styling main page */
+
+.mainpage {
+  margin: 50px 270px 0 270px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 50px;
+}
+
+.carte {
+  border: 2px dotted black;
+}
+
+.carte img {
+  width: 100%;
+  text-align: center;
+}
+
+.image-carte {
+  display: flex;
+  justify-content: center;
+}
+
+.carte-gant {
+  margin-top: 100px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infos-gant {
+  margin-top: 85px;
+}
+
