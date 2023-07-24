@@ -35,10 +35,10 @@ margin-left: 310px;
 /* styling main page */
 
 .mainpage {
-  margin: 50px 270px 0 270px;
+  margin: 50px 270px 300px 270px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 50px;
+  gap: 30px 50px;
 }
 
 .carte {
