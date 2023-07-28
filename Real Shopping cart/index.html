@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,38 +7,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styling.css">
-  <title>Shopping cart</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Real shopping cart </title>
 </head>
 
 <body>
+  <div class="all-page">
 
-  <div class="allPage">
-
-    <!-- Heading -->
-    <div class="heading">
+    <div class="header">
 
       <div class="left">
-        <img src="shopping-logo.png" class="logo-page">
+        <img src="../shopping-logo.png" class="logo-page">
       </div>
 
       <div class="middle">
-        <h1 class="page-title">Shopping cart Page</h1>
-        <h2>Choose the items you want and how many !</h2>
-      </div>
-
-      <div class="right">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <h1>My Shopping cart List</h1>
+        <h2> Find all the items you want</h2>
       </div>
 
     </div>
 
-    <!-- Main page -->
-    <div class="mainpage">
-
+    <div class="main-page">
+      <!-- Carte 1 -->
       <div class="carte">
         <div class="image-carte">
-          <img src="Produits/chemise1.jpg">
+          <img src="../Produits/chemise1.jpg" class="produit1">
         </div>
 
         <div class="description">
@@ -48,15 +41,21 @@
 
         <div class="price">
           <h1>300 Dhs</h1>
-          <i class="fa-solid fa-plus"></i>
-          <p class="quantity">4</p>
-          <i class="fa-solid fa-minus"></i>
+          <div class="buttons">
+            <i class="fa-solid fa-plus"></i>
+            <p class="quantity">4</p>
+            <i class="fa-solid fa-minus"></i>
+          </div>
+
         </div>
+
       </div>
+
+      <!-- carte 2 -->
 
       <div class="carte">
         <div class="image-carte">
-          <img src="Produits/chemise1.jpg">
+          <img src="../Produits/chemise1.jpg" class="produit1">
         </div>
 
         <div class="description">
@@ -66,19 +65,19 @@
 
         <div class="price">
           <h1>300 Dhs</h1>
-          <i class="fa-solid fa-plus"></i>
-          <p class="quantity">4</p>
-          <i class="fa-solid fa-minus"></i>
+          <div class="buttons">
+            <i class="fa-solid fa-plus"></i>
+            <p class="quantity">4</p>
+            <i class="fa-solid fa-minus"></i>
+          </div>
+
         </div>
+
       </div>
 
     </div>
-
-
-
   </div>
 
-  <script src="interact.js"></script>
 
 </body>
 

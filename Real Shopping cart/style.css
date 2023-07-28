@@ -1,0 +1,66 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Heading style */
+
+.header {
+  border: 2px black dotted;
+  display: flex;
+
+}
+
+.left {
+  border: 2px red dotted;
+  margin-left: 100px;
+}
+.logo-page {
+  width: 100px;
+}
+
+.middle {
+  margin-left: 400px;
+  border: 2px blue dotted;
+  padding-top: 15px;
+  text-align: center;
+  line-height: 40px;
+
+}
+
+/* styling cartes produits */
+
+.main-page {
+  border: 2px black solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px 270px 300px 270px;
+  
+
+}
+
+.carte {
+  border: 2px dotted purple;
+  text-align: center;
+}
+
+.produit1 {
+  width:150px;
+}
+
+.price {
+  border: 2px red dotted;
+  width: 300px;
+  display: flex;
+  margin-left: 100px;
+}
+
+.buttons {
+  border: 2px green dotted;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+  margin-left: auto;
+}
