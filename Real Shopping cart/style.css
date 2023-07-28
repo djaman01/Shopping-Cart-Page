@@ -6,6 +6,10 @@
 
 /* Heading style */
 
+.all-page {
+  margin-bottom: 500px;
+}
+
 .header {
   border: 2px black dotted;
   display: flex;
@@ -34,16 +38,17 @@
 .main-page {
   border: 2px black solid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 50px 270px 300px 270px;
-  
-
+  grid-template-columns: 300px 300px;
+  column-gap: 50px;
+  margin: 50px 270px 150px 270px;
+  justify-content: center;
 }
 
 .carte {
   border: 2px dotted purple;
   text-align: center;
-}
+
+  }
 
 .produit1 {
   width:150px;
@@ -51,9 +56,8 @@
 
 .price {
   border: 2px red dotted;
-  width: 300px;
   display: flex;
-  margin-left: 100px;
+  justify-content: center;
 }
 
 .buttons {
@@ -64,3 +68,39 @@
   width: 80px;
   margin-left: auto;
 }
+
+.add-cart {
+  width: 120px;
+  height: 30px;
+  background-color: rgb(0, 145, 255);
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.933);
+}
+
+/* styling cart */
+
+.cart-title h1 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.all-cart {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 120px;
+  
+}
+
+.item-infos {
+  display: flex;
+}
+
+.title {
+  border-bottom: 2px solid black;
+}
+.column-title {
+  margin-bottom: 20px;
+}
+
+
+
