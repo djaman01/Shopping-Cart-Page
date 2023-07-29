@@ -82,24 +82,47 @@
 .cart-title h1 {
   margin-bottom: 50px;
   text-align: center;
+  margin-left: 70px;
 }
 
 .all-cart {
-  display: flex;
-  justify-content: space-around;
   margin-left: 120px;
-  
 }
 
 .item-infos {
   display: flex;
 }
 
-.title {
-  border-bottom: 2px solid black;
+.image-and-title {
+  display: flex;
 }
 .column-title {
   margin-bottom: 20px;
+}
+
+.column-names {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin-left: 200px;
+  margin-bottom: 20px;
+ 
+}
+.cart-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  margin-top: 50px;
+  margin-right: 200px;
+  text-align: end;
+}
+
+.total-price {
+  font-weight: 300;
+  margin-top: 10px;
 }
 
 
