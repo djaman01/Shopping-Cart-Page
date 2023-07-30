@@ -123,7 +123,23 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
 
   let createCartRow = document.createElement('div');
 
-  let cartRowContent = `
+  //Avant toute chose, car l'ordre compte: on va créer une instruction qui va empêcher l'utilsateur d'ajouter le même article 2 fois et qui va pop une alert pour lui dire
+  //on va dire que si le title d'un article ajouté = le ${titleArticle} alors: on pop l'alert et on sort de la fucntion avec return pour pas que ça add un article
+  //Si on écrit cette instruction à la fin de la function: ca va pop l'alert, mais ca va quand même ajouter l'article
+
+  let cartItems= document.querySelector('.all-cart-items');
+
+  let titleItem = cartItems.getElementsByClassName('name-article'); // on accède au nom des article par le cart-item, pour cibler les articles ajoutés au cart et les différencier des articles dans le body
+  
+  for (let i=0; i<titleItem.length; i++) {
+    if (titleItem[i].innerText==titleArticle) {
+      alert("You've already selected this article");
+      return;
+    }
+  }
+
+//On ajoute le content au <div> crée et ça sera toute une structure HTML
+  let cartRowContent = ` 
   <div class="image-and-title">
       <img src="${imageArticle}" width="70px">
       <h3>${titleArticle}</h3>
@@ -138,16 +154,17 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
     
     `
   
-  createCartRow.innerHTML=cartRowContent;
+  createCartRow.innerHTML=cartRowContent; //on ajoute .innerHTML au lieu de .innerText car on ajoute des balises HTML <div> / <img> / <h3>...etc
 
-  let cartItems= document.querySelector('.all-cart-items');
+  
 
-  cartItems.append(createCartRow);
+  cartItems.append(createCartRow); // On nest le <div> crée avec son content dans le cart Items: !! Chaque row ajouté apparaitra à la fin du cart item
 
-  createCartRow.classList.add('cart-row');
+  createCartRow.classList.add('cart-row'); // On rajoute au cart Row ajouté au cart le même style que celui utilisé pour les modèles (d'ou une autre de leur utilité)
 
 
-  let titleItem = cartItems.getElementsByClassName('name-article');
+
+
 
 
 
