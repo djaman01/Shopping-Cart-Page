@@ -162,6 +162,18 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
 
   createCartRow.classList.add('cart-row'); // On rajoute au cart Row ajouté au cart le même style que celui utilisé pour les modèles (d'ou une autre de leur utilité)
 
+  //Maintenant, je vais créer une condition pour que l'utilisateur ne puisse rajouter 1 objet qu'une fois.
+  //Mias pour que ça marche, il faut l'écrire en haut, pour que le return sorte de la function et n'ajoute rien avant
+
+  //Ensuite, il faut activer chaque boutton remove de chaque element ajouté
+
+  let newRemoveButton = document.getElementsByClassName('remove');
+
+  for(let i=0; i<newRemoveButton.length; i++) {
+    let theNewRemove = newRemoveButton [i];
+
+    theNewRemove.addEventListener('click', removeArticle);
+  }
 
 
 
