@@ -140,11 +140,14 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
   
   createCartRow.innerHTML=cartRowContent;
 
-  let parentOfRows= document.querySelector('.all-cart-items');
+  let cartItems= document.querySelector('.all-cart-items');
 
-  parentOfRows.append(createCartRow);
+  cartItems.append(createCartRow);
 
   createCartRow.classList.add('cart-row');
+
+
+  let titleItem = cartItems.getElementsByClassName('name-article');
 
 
 
