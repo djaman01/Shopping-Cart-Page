@@ -40,7 +40,7 @@
   display: grid;
   grid-template-columns: 300px 300px;
   column-gap: 50px;
-  margin: 50px 270px 150px 270px;
+  margin: 50px 270px 100px 270px;
   justify-content: center;
 }
 
@@ -81,12 +81,14 @@
 
 .cart-title h1 {
   margin-bottom: 50px;
-  text-align: center;
-  margin-left: 70px;
+  margin-left: 710px;
+  width: 80px;
+  border-bottom: 2px green solid;
 }
 
+
 .all-cart {
-  margin-left: 120px;
+  margin: 50px 100px 150px 100px;
 }
 
 .item-infos {
@@ -97,14 +99,15 @@
   display: flex;
 }
 .column-title {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  border-bottom: 2px grey solid;
 }
 
 .column-names {
   display: flex;
   justify-content: space-between;
   width: 1000px;
-  margin-left: 200px;
+  margin-left: 170px;
   margin-bottom: 20px;
  
 }
@@ -112,6 +115,8 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
+  border-bottom: 2px grey solid;
+  
 }
 
 .cart-total {

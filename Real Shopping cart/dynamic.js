@@ -10,7 +10,7 @@ for (let i = 0; i < removeButtons.length; i++) {
 }
 
 function removeArticle(e) {
-  let buttonRemoveClicked= e.target; //on cible chaque theRemoveButton clicked
+  let buttonRemoveClicked = e.target; //on cible chaque theRemoveButton clicked
   buttonRemoveClicked.parentElement.parentElement.remove(); //par le .parentElement, on remonte à l'article qui le nest et on le supprime
   updateTotal(); //On appelle la function qui updatera le total qu'on on va remove une ligne qu'on a écrit plus bas
 }
@@ -23,38 +23,38 @@ function removeArticle(e) {
 
 function updateTotal() {
 
-  let total=0; //on initialise une variable total
+  let total = 0; //on initialise une variable total
 
   //Normalement, le cartItem devrait être vide et ne se remplire que quand on add des items
   //C'est pour quoi, en prévision de la suppression des modèles des articles, on accède aux articles par le cartItems.getetlements...
-  
-  //Comme on a accéder plus haut à chacun des removebutton, maintenant on va accéder à chacune des Row car elles contiennent le prix et la quantity
-  let cartItems= document.querySelector('.all-cart-items');
 
-  let cartRows= cartItems.getElementsByClassName('cart-row'); //on accède aux row par le cart item en prévision de la suppression des modèles des articles
+  //Comme on a accéder plus haut à chacun des removebutton, maintenant on va accéder à chacune des Row car elles contiennent le prix et la quantity
+  let cartItems = document.querySelector('.all-cart-items');
+
+  let cartRows = cartItems.getElementsByClassName('cart-row'); //on accède aux row par le cart item en prévision de la suppression des modèles des articles
 
   //Maintenant qu'on a accéde aux rows, on va cibler chaque row une par une
 
-  for (let i=0; i < cartRows.length; i++) {
-    let theRow= cartRows[i]; //Et là on a accéder à chacune des row dans la function. on peut donc accéder à chaque price et quantity de chaque row
+  for (let i = 0; i < cartRows.length; i++) {
+    let theRow = cartRows[i]; //Et là on a accéder à chacune des row dans la function. on peut donc accéder à chaque price et quantity de chaque row
 
-  let thePrice= theRow.querySelector('.cart-price');
-  let theQuantity= theRow.querySelector('.quantity-input');
+    let thePrice = theRow.querySelector('.cart-price');
+    let theQuantity = theRow.querySelector('.quantity-input');
 
-  //Mais le price est un text avec un symbole: on veut donc le rendre un nombre, même si décimal (on utilisera parseFloat) et enlever le symbole 
-  let realPrice= parseFloat(thePrice.innerText.replace('Dhs',''));
+    //Mais le price est un text avec un symbole: on veut donc le rendre un nombre, même si décimal (on utilisera parseFloat) et enlever le symbole 
+    let realPrice = parseFloat(thePrice.innerText.replace('Dhs', ''));
 
-  //Et il faut accéder à la value de l'input
-  let realQuantity= theQuantity.value;
+    //Et il faut accéder à la value de l'input
+    let realQuantity = theQuantity.value;
 
-  total+= realPrice*realQuantity;
+    total += realPrice * realQuantity;
 
-  total = Math.round(total*100)/100; //On arrondi si c'est un décimal à 2chiffres après la virgule
+    total = Math.round(total * 100) / 100; //On arrondi si c'est un décimal à 2chiffres après la virgule
 
   }
   //Maintenant qu'on a le total on peut sortir de la loop et l'assigner à l'element total en entrant au contenu par .innerText
   //On va aussi ajouter le symbole Dirhams qu'on a enlever plus tôt
-  let realTotal= document.getElementsByClassName('total-price')[0].innerText= total+ ' Dhs';
+  let realTotal = document.getElementsByClassName('total-price')[0].innerText = total + ' Dhs';
 
 }
 
@@ -68,35 +68,88 @@ function updateTotal() {
 
 //Comme précedemment, comme le cartitem sera vide, on va accéder à tous les inputs par le cartItem puis au row
 
-let cartItems= document.querySelector('.all-cart-items');
-let cartRows= cartItems.getElementsByClassName('cart-row');
+let cartItems = document.querySelector('.all-cart-items');
+let cartRows = cartItems.getElementsByClassName('cart-row');
 
 
-for (let i=0; i<cartRows.length; i++) {
-  
-  let theRow= cartRows[i];
+for (let i = 0; i < cartRows.length; i++) {
 
-  let theQuantity= theRow.querySelector('.quantity-input');
+  let theRow = cartRows[i];
+
+  let theQuantity = theRow.querySelector('.quantity-input');
 
 
-  theQuantity.addEventListener('change', realTotal); 
+  theQuantity.addEventListener('change', realTotal);
   //on ne va pas appeler la function updateTotal(); car elle fonctionnera même si quantity <=0 ou
   //Or la quantity sera obligatoirement 1 minimum
   //Donc on va créer une nouvelle function qui appelera updateTotal() que sous ces condition et on l'appelera realTotal
+
+}
+function realTotal(e) {
+  let inputChanged = e.target;
+
+  if (inputChanged.value <= 0) {
+    inputChanged.value = 1;
+  }
+  updateTotal();
+}
+
+//Objectif 3: activer le button addTocart, pour ajouter un item dans le cart
+
+let addCartButton = document.getElementsByClassName('add-cart');
+
+for (let i = 0; i < addCartButton.length; i++) {
+  let theAddButton = addCartButton[i];
+
+  theAddButton.addEventListener('click', addToCart);
+}
+
+function addToCart(e) {
+
+  let addButtonClicked = e.target;
+
+  let theArticle = addButtonClicked.parentElement.parentElement;
+
+  let imageArticle = theArticle.getElementsByClassName('produit1')[0].src;
+  let priceArticle = theArticle.getElementsByClassName('price')[0].innerText;
+  let titleArticle = theArticle.getElementsByClassName('name-article')[0].innerText;
+
+  updateTotal();
+  addToCartFunction(imageArticle, priceArticle, titleArticle);
+
+}
+
+function addToCartFunction(imageArticle, priceArticle, titleArticle) {
+
+  let createCartRow = document.createElement('div');
+
+  let cartRowContent = `
+  <div class="image-and-title">
+      <img src="${imageArticle}" width="70px">
+      <h3>${titleArticle}</h3>
+  </div>
+
+  <span class="cart-price">${priceArticle}</span>
+
+  <div class="cart-quantity">
+    <input class="quantity-input" type="number" value="1">
+    <button class="remove" type="button">Remove</button>
+  </div>   
     
-  }
-  function realTotal(e) {
-    let inputChanged= e.target;
-
-    if(inputChanged.value<=0) {
-      inputChanged.value = 1;
-    }
-    updateTotal();
-  }
-
-  //Objectif 3: activer le button addTocart, pour ajouter un item dans le cart
+    `
   
+  createCartRow.innerHTML=cartRowContent;
 
+  let parentOfRows= document.querySelector('.all-cart-items');
+
+  parentOfRows.append(createCartRow);
+
+  createCartRow.classList.add('cart-row');
+
+
+
+
+}
 
 
 
