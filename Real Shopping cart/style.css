@@ -38,9 +38,10 @@
 .main-page {
   border: 2px black solid;
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: 300px 300px 300px;
+  gap: 30px 50px;
+  margin-bottom: 100px;
   column-gap: 50px;
-  margin: 50px 270px 100px 270px;
   justify-content: center;
 }
 
