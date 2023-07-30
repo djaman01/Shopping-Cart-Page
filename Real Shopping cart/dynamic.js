@@ -139,10 +139,11 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
   }
 
 //On ajoute le content au <div> crée et ça sera toute une structure HTML
+//!!!!Dans le <h3> du nom de l'article: IL FAUT QUE LA CLASS SOIT LA MÊME QUE CELLE QU'ON CIBLE PLUS HAUT, POUR EMPECHER UN 2EME AJOUT !!!
   let cartRowContent = ` 
   <div class="image-and-title">
       <img src="${imageArticle}" width="70px">
-      <h3>${titleArticle}</h3>
+      <h3 class="cart-name-article">${titleArticle}</h3> 
   </div>
 
   <span class="cart-price">${priceArticle}</span>
