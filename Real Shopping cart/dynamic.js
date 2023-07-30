@@ -110,12 +110,12 @@ function addToCart(e) {
 
   let theArticle = addButtonClicked.parentElement.parentElement;
 
-  let imageArticle = theArticle.getElementsByClassName('produit1')[0].src;
-  let priceArticle = theArticle.getElementsByClassName('price')[0].innerText;
-  let titleArticle = theArticle.getElementsByClassName('name-article')[0].innerText;
+  let imageArticle = theArticle.querySelector('.produit1').src;
+  let priceArticle = theArticle.querySelector('.price').innerText;
+  let titleArticle = theArticle.querySelector('.name-article').innerText;
 
-  updateTotal();
   addToCartFunction(imageArticle, priceArticle, titleArticle);
+  updateTotal(); //!! ATTENTION: Il faut placer cet appel de function après l'appel de addtocartfunction(): pour que le total se mette à jour APRES avoir ajouté un element
 
 }
 
