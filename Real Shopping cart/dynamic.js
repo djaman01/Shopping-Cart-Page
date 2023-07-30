@@ -129,7 +129,7 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
 
   let cartItems= document.querySelector('.all-cart-items');
 
-  let titleItem = cartItems.getElementsByClassName('name-article'); // on accède au nom des article par le cart-item, pour cibler les articles ajoutés au cart et les différencier des articles dans le body; sinon dès qu'on cliquera sur un itm pour l'add, ca va refuser
+  let titleItem = cartItems.getElementsByClassName('cart-name-article'); // on accède au nom des article par le cart-item, pour cibler les articles ajoutés au cart et les différencier des articles dans le body; sinon dès qu'on cliquera sur un itm pour l'add, ca va refuser
   
   for (let i=0; i<titleItem.length; i++) {
     if (titleItem[i].innerText==titleArticle) {
