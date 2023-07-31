@@ -41,6 +41,7 @@
   grid-template-columns: 300px 300px 300px;
   gap: 30px 50px;
   margin-bottom: 100px;
+  margin-top: 70px;
   column-gap: 50px;
   justify-content: center;
 }
@@ -83,7 +84,7 @@
 .cart-title h1 {
   margin-bottom: 50px;
   margin-left: 710px;
-  width: 80px;
+  width: 70px;
   border-bottom: 2px green solid;
 }
 
@@ -128,6 +129,19 @@
 .total-price {
   font-weight: 300;
   margin-top: 10px;
+}
+
+.div-purchase {
+  display: flex;
+  justify-content: center;
+}
+.final-purchase {
+  background-color: aqua;
+  font-weight: bold;
+  margin-top: 50px;
+  width: 100px;
+  height: 30px;
+  
 }
 
 

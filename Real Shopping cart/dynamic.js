@@ -49,9 +49,8 @@ function updateTotal() {
 
     total += realPrice * realQuantity;
 
-    total = Math.round(total * 100) / 100; //On arrondi si c'est un décimal à 2chiffres après la virgule
-
   }
+  total = Math.round(total * 100) / 100; //On arrondi si c'est un décimal à 2chiffres après la virgule
   //Maintenant qu'on a le total on peut sortir de la loop et l'assigner à l'element total en entrant au contenu par .innerText
   //On va aussi ajouter le symbole Dirhams qu'on a enlever plus tôt
   let realTotal = document.getElementsByClassName('total-price')[0].innerText = total + ' Dhs';
@@ -113,6 +112,10 @@ function addToCart(e) {
   let imageArticle = theArticle.querySelector('.produit1').src;
   let priceArticle = theArticle.querySelector('.price').innerText;
   let titleArticle = theArticle.querySelector('.name-article').innerText;
+  //On a accédé à tous les élements qu'on veut ajouter dans le cart:
+
+  //Maintenant, il faut les ajouter, en créant un div+y mettre le HTML+Nest dans le parent element
+  //Comme le code serait trop long on va le mettre dans une nouvelle function qu'on va appelé ici
 
   addToCartFunction(imageArticle, priceArticle, titleArticle);
   updateTotal(); //!! ATTENTION: Il faut placer cet appel de function après l'appel de addtocartfunction(): pour que le total se mette à jour APRES avoir ajouté un element
@@ -168,7 +171,7 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
 
   //Ensuite, il faut activer chaque boutton remove de chaque element ajouté
 
-  let newRemoveButton = document.getElementsByClassName('remove');
+  let newRemoveButton = document.getElementsByClassName('remove'); //ou on peut y accéder sans for loop juste en ciblant la nouvelle cart Row crée:c'est ce que je vais faire pour le quantoty-input
 
   for(let i=0; i<newRemoveButton.length; i++) {
     let theNewRemove = newRemoveButton [i];
@@ -176,14 +179,31 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
     theNewRemove.addEventListener('click', removeArticle);
   }
 
+  //Maintenant il faut activer les quantity pour chaque nouvel element crée
 
-
-
-
-
+  let newQuantity = createCartRow.querySelector('.quantity-input'); //On accède par create cart Rox, car quand on va supprimer les modèles, c'est là ou va y avoir le row avec les nouvelles quantity
+  let changeQuantity = newQuantity.addEventListener('change', realTotal);
 
 }
 
+//Maintenant qu'on a crée les nouvelles row avec leur contenu en s'aidant des modèles crée dans le html
+//On peut supprimer les 2 cartRow préalableme,nt crée dans le HTML pour que le cart item soit vide
+//Et on écrit 0 Dhs dans le Total
 
+//Maintenant il faut faire en sorte que le purchase button vide notre cart et pop une alert: thank you for purchas
 
+let finalPurchase =document.querySelector('.final-purchase');
 
+finalPurchase.addEventListener('click', finalPurchaseClicked);//on crée une nouvelle call back function qui va supprimer tous les items
+
+function finalPurchaseClicked () {// Pas de loop car 1 seul bouton purchase
+  alert('Thank you for your purchase')
+  let cartItems = document.querySelector('.all-cart-items');
+  //Maintenant, étant donné que les modèles de cart-row ont été supprimés, il faut accéder au nouveau cart-row added, par el cart items et en loopant sur eu
+  while(cartItems.hasChildNodes()) { //On utilise une while loop, car pas besoin de counter variable pour conditionner l'arret. Ici la loop va continuer tant que la condition est vraie
+    cartItems.removeChild(cartItems.firstChild); //on remove tous les 1er child à l'interieur du cartItem jusqu'à ce que ce soit vide
+  }
+  updateTotal(); //on appelle la function update total pour le remettre à 0 une fois tout supprimé
+}
+
+//Et voilà: Notre JS pour shopping cart est terminé !
