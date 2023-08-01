@@ -149,7 +149,9 @@ function addToCartFunction(imageArticle, priceArticle, titleArticle) {
       <h3 class="cart-name-article">${titleArticle}</h3> 
   </div>
 
-  <span class="cart-price">${priceArticle}</span>
+  <div class= "div-cart-price">
+    <span class="cart-price">${priceArticle}</span>
+  </div>
 
   <div class="cart-quantity">
     <input class="quantity-input" type="number" value="1">

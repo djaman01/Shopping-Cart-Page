@@ -50,6 +50,8 @@
 
 .produit1 {
   width:150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 .price {
@@ -75,12 +77,17 @@
 
 /* styling cart */
 
+
+.cart-title {
+  display: flex;
+  justify-content: center;
+}
+
 .cart-title h1 {
-  margin-bottom: 50px;
-  margin-left: 710px;
-  width: 70px;
+  width: 215px;
   border-bottom: 2px green solid;
 }
+
 
 
 .all-cart {
@@ -113,6 +120,14 @@
   margin-bottom: 10px;
   border-bottom: 2px grey solid;
   
+}
+
+.div-cart-price{
+  color: red;
+  display: flex;
+  border: 2px solid green;
+  width: 100px;
+  justify-content: center;
 }
 
 .cart-total {
