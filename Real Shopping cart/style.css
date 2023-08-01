@@ -46,12 +46,18 @@
 .carte {
   border: 2px solid grey;
   text-align: center;
+  object-fit: cover;
   }
 
 .produit1 {
   width:150px;
   height: 150px;
   object-fit: cover;
+}
+
+.name-article {
+  border: 2px red solid;
+  height: 78px;
 }
 
 .price {
@@ -89,7 +95,6 @@
 }
 
 
-
 .all-cart {
   margin: 50px 100px 150px 100px;
 }
@@ -101,6 +106,12 @@
 .image-and-title {
   display: flex;
 }
+
+.cart-name-article {
+  border: 2px solid black;
+  width: 140px;
+}
+
 .column-title {
   margin-bottom: 50px;
   border-bottom: 2px grey solid;
