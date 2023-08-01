@@ -146,6 +146,12 @@
   justify-content: center;
 }
 
+.quantity-input {
+  width: 30px;
+  padding-left: 7px;
+  font-weight: bold;
+}
+
 .remove {
   width: 80px;
   height: 23px;
