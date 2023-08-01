@@ -7,12 +7,13 @@
 /* Heading style */
 
 .all-page {
-  margin-bottom: 500px;
+  background-color: antiquewhite;
 }
 
 .header {
   display: flex;
   border: 2px solid black;
+  background-color: rgb(255, 225, 0);
 }
 
 .left {
@@ -100,7 +101,7 @@
 
 
 .all-cart {
-  margin: 50px 100px 150px 100px;
+  margin: 50px 200px 150px 100px;
 }
 
 .item-infos {
@@ -114,18 +115,22 @@
 .cart-name-article {
   width: 140px;
 }
-
-.column-title {
-  margin-bottom: 50px;
-  border-bottom: 2px grey solid;
+.title-item {
+  margin-left: 50px;
+}
+.title-price {
+  margin-left: 85px;
+}
+.title- {
+  margin-left: 255px;
 }
 
 .column-names {
+  border-bottom: 2px solid grey;
   display: flex;
-  justify-content: space-between;
-  width: 1000px;
-  margin-left: 170px;
-  margin-bottom: 20px;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 50px;
  
 }
 .cart-row {
@@ -144,7 +149,7 @@
 }
 
 .quantity-input {
-  width: 30px;
+  width: 45px;
   padding-left: 7px;
   font-weight: bold;
 }
