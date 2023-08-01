@@ -58,7 +58,10 @@
 }
 
 .name-article { 
+  display: flex;
   height: 78px;
+  align-items:  center;
+  justify-content: center;
 }
 
 .price {
