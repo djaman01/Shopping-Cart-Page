@@ -114,10 +114,10 @@ function addToCart(e) {
   let titleArticle = theArticle.querySelector('.name-article').innerText;
   //On a accédé à tous les élements qu'on veut ajouter dans le cart:
 
-  //Maintenant, il faut les ajouter, en créant un div+y mettre le HTML+Nest dans le parent element
+  //Maintenant, il faut les ajouter, en créant un div+ mettre le HTML+Nest dans le parent element
   //Comme le code serait trop long on va le mettre dans une nouvelle function qu'on va appelé ici
 
-  addToCartFunction(imageArticle, priceArticle, titleArticle);
+  addToCartFunction(imageArticle, priceArticle, titleArticle); //!!! les variables qui accèdent deviennet les parametres de la function, comme ça on peut y acceder dans une autre function seulement en appelant les parametres
   updateTotal(); //!! ATTENTION: Il faut placer cet appel de function après l'appel de addtocartfunction(): pour que le total se mette à jour APRES avoir ajouté un element
 
 }
